@@ -3,9 +3,4 @@ layout: page
 title: About Me
 permalink: /about/
 ---
-
-This website is powered by **[fastpages](https://github.com/fastai/fastpages)** [^1].
-
-
-
-[^1]:a blogging platform that natively supports Jupyter notebooks in addition to other formats.
+Hi, My name is Syed Omer Gilani. I am a tenured associate professor at National University of Sciences & Technology (NUST), Pakistan. My interest includes programming, reading, and writing. I started this blog to share what I have learned over the years and what I continue to learn.
