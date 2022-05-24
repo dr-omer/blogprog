@@ -11,15 +11,15 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
 <meta property="og:description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
-<link rel="canonical" href="https://omergilani.github.io/prog4cm/julia/image%20processing/2022/05/24/BasicImageProcessing-in-Julia.html" />
-<meta property="og:url" content="https://omergilani.github.io/prog4cm/julia/image%20processing/2022/05/24/BasicImageProcessing-in-Julia.html" />
+<link rel="canonical" href="https://omergilani.github.io/prog4cm/jupyter/julia/image%20processing/2022/05/24/BasicImageProcessing-in-Julia.html" />
+<meta property="og:url" content="https://omergilani.github.io/prog4cm/jupyter/julia/image%20processing/2022/05/24/BasicImageProcessing-in-Julia.html" />
 <meta property="og:site_name" content="Programming for Curious Minds" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2022-05-24T00:00:00-05:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Basic Image Procesisng in Julia" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Omer"},"dateModified":"2022-05-24T00:00:00-05:00","datePublished":"2022-05-24T00:00:00-05:00","description":"An easy to use blogging platform with support for Jupyter Notebooks.","headline":"Basic Image Procesisng in Julia","mainEntityOfPage":{"@type":"WebPage","@id":"https://omergilani.github.io/prog4cm/julia/image%20processing/2022/05/24/BasicImageProcessing-in-Julia.html"},"url":"https://omergilani.github.io/prog4cm/julia/image%20processing/2022/05/24/BasicImageProcessing-in-Julia.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Omer"},"dateModified":"2022-05-24T00:00:00-05:00","datePublished":"2022-05-24T00:00:00-05:00","description":"An easy to use blogging platform with support for Jupyter Notebooks.","headline":"Basic Image Procesisng in Julia","mainEntityOfPage":{"@type":"WebPage","@id":"https://omergilani.github.io/prog4cm/jupyter/julia/image%20processing/2022/05/24/BasicImageProcessing-in-Julia.html"},"url":"https://omergilani.github.io/prog4cm/jupyter/julia/image%20processing/2022/05/24/BasicImageProcessing-in-Julia.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/prog4cm/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://omergilani.github.io/prog4cm/feed.xml" title="Programming for Curious Minds" /><link rel="shortcut icon" type="image/x-icon" href="/prog4cm/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -104,6 +104,9 @@ window.onload = wrap_img;
 
     
       <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/prog4cm/categories/#jupyter">jupyter</a>
+        &nbsp;
       
         <a class="category-tags-link" href="/prog4cm/categories/#julia">julia</a>
         &nbsp;
@@ -400,14 +403,16 @@ In jupyter notebook, the environment can be activated by importing <code>Pkg</co
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The above output shows that light house image has a <code>width</code> of <code>768</code> pixels and a height of <code>height</code> of <code>512</code> pixels. Alternatively, we can also state that image has <code>512</code> rows and <code>768</code> columns.</p>
-<blockquote>
-<p>Important :Following notation are analogous to each other. We frequently reference them in text interchangeably.</p>
+<p>The above output shows that light house image has a <code>width</code> of <code>768</code> pixels and a height of <code>height</code> of <code>512</code> pixels. Alternatively, we can also state that image has <code>512</code> rows and <code>768</code> columns. 
+</p>
+<div class="flash flash-warn">
+    <svg class="octicon octicon-zap" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M10.561 1.5a.016.016 0 00-.01.004L3.286 8.571A.25.25 0 003.462 9H6.75a.75.75 0 01.694 1.034l-1.713 4.188 6.982-6.793A.25.25 0 0012.538 7H9.25a.75.75 0 01-.683-1.06l2.008-4.418.003-.006a.02.02 0 00-.004-.009.02.02 0 00-.006-.006L10.56 1.5zM9.504.43a1.516 1.516 0 012.437 1.713L10.415 5.5h2.123c1.57 0 2.346 1.909 1.22 3.004l-7.34 7.142a1.25 1.25 0 01-.871.354h-.302a1.25 1.25 0 01-1.157-1.723L5.633 10.5H3.462c-1.57 0-2.346-1.909-1.22-3.004L9.503.429z"></path></svg>
+    <strong>Important: </strong>Following notation are analogous to each other. We frequently reference them in text interchangeably.
+</div>
 <div class="flash flash-success">
     <svg class="octicon octicon-checklist" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M2.5 1.75a.25.25 0 01.25-.25h8.5a.25.25 0 01.25.25v7.736a.75.75 0 101.5 0V1.75A1.75 1.75 0 0011.25 0h-8.5A1.75 1.75 0 001 1.75v11.5c0 .966.784 1.75 1.75 1.75h3.17a.75.75 0 000-1.5H2.75a.25.25 0 01-.25-.25V1.75zM4.75 4a.75.75 0 000 1.5h4.5a.75.75 0 000-1.5h-4.5zM4 7.75A.75.75 0 014.75 7h2a.75.75 0 010 1.5h-2A.75.75 0 014 7.75zm11.774 3.537a.75.75 0 00-1.048-1.074L10.7 14.145 9.281 12.72a.75.75 0 00-1.062 1.058l1.943 1.95a.75.75 0 001.055.008l4.557-4.45z"></path></svg>
     <strong>Tip: </strong>image(height,width) $\rightarrow$ image(rows,cols) $\rightarrow$ image(1st dimension, 2nd dimension) $\rightarrow$ image(y,x) $\rightarrow$ image (argument 1, argument 2)
 </div>
-</blockquote>
 
 </div>
 </div>
@@ -677,12 +682,6 @@ To provide a range in rows and column we use following notation
 <h2 id="Compatibility">
 <a class="anchor" href="#Compatibility" aria-hidden="true"><span class="octicon octicon-link"></span></a>Compatibility<a class="anchor-link" href="#Compatibility"> </a>
 </h2>
-<p></p>
-<div class="flash">
-    <svg class="octicon octicon-info" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg>
-    <strong>Note: </strong>This file was developed and tested with following version of Julia
-</div>
-
 </div>
 </div>
 </div>
@@ -731,7 +730,7 @@ To provide a range in rows and column we use following notation
         theme="github-light"
         crossorigin="anonymous"
         async>
-</script><a class="u-url" href="/prog4cm/julia/image%20processing/2022/05/24/BasicImageProcessing-in-Julia.html" hidden></a>
+</script><a class="u-url" href="/prog4cm/jupyter/julia/image%20processing/2022/05/24/BasicImageProcessing-in-Julia.html" hidden></a>
 </article>
 
       </div>
