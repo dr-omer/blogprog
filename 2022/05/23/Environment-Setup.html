@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Title | Programming for Curious Minds</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Title" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
+<meta property="og:description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
+<link rel="canonical" href="https://omergilani.github.io/prog4cm/2022/05/23/Environment-Setup.html" />
+<meta property="og:url" content="https://omergilani.github.io/prog4cm/2022/05/23/Environment-Setup.html" />
+<meta property="og:site_name" content="Programming for Curious Minds" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-05-23T00:00:00-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Title" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-05-23T00:00:00-05:00","datePublished":"2022-05-23T00:00:00-05:00","description":"An easy to use blogging platform with support for Jupyter Notebooks.","headline":"Title","mainEntityOfPage":{"@type":"WebPage","@id":"https://omergilani.github.io/prog4cm/2022/05/23/Environment-Setup.html"},"url":"https://omergilani.github.io/prog4cm/2022/05/23/Environment-Setup.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/prog4cm/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://omergilani.github.io/prog4cm/feed.xml" title="Programming for Curious Minds" /><link rel="shortcut icon" type="image/x-icon" href="/prog4cm/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css" integrity="sha512-h7nl+xz8wgDlNM4NqKEM4F1NkIRS17M9+uJwIGwuo8vGqIl4BhuCKdxjWEINm+xyrUjNCnK5dCrhM0sj+wTIXw==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.js" integrity="sha512-/CMIhXiDA3m2c9kzRyd97MTb3MC6OVnx4TElQ7fkkoRghwDf6gi41gaT1PwF270W6+J60uTmwgeRpNpJdRV6sg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js" integrity="sha512-Do7uJAaHZm5OLrIv/yN4w0iG1dbu01kzdMNnFfu/mAqgUk6Nniv2JYHcwH+cNwjqgLcqcuBBk+JRvprLVI8azg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha512-0doc9hKxR3PYwso42RD1p5ySZpzzuDiOwMrdCEh2WdJZCjcmFKc/wEnL+z8fBQrnHoiNWbo+3fiGkOYXBdQp4A==" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/prog4cm/">Programming for Curious Minds</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/prog4cm/about/">About Me</a><a class="page-link" href="/prog4cm/search/">Search</a><a class="page-link" href="/prog4cm/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Title</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-05-23T00:00:00-05:00" itemprop="datePublished">
+        May 23, 2022
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      5 min read
+    
+</span></p>
+
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-justify-center">
+          <div class="px-2">
+
+    <a href="https://github.com/omergilani/prog4cm/tree/master/_notebooks/2022-05-23-Environment Setup.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/prog4cm/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/omergilani/prog4cm/master?filepath=_notebooks%2F2022-05-23-Environment+Setup.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/prog4cm/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/omergilani/prog4cm/blob/master/_notebooks/2022-05-23-Environment Setup.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/prog4cm/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+          <div class="px-2">
+  <a href="https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2Fomergilani%2Fprog4cm%2Fblob%2Fmaster%2F_notebooks%2F2022-05-23-Environment+Setup.ipynb" target="_blank">
+      <img class="notebook-badge-image" src="/prog4cm/assets/badges/deepnote.svg" alt="Launch in Deepnote"/>
+  </a>
+</div>
+
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2022-05-23-Environment Setup.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Activating-Project-Environment">Activating Project Environment<a class="anchor-link" href="#Activating-Project-Environment"> </a></h2><p>Every julia project can has it's own environment just as python.
+In jupyter notebook, the environment can be activated by importing <code>Pkg</code> - a julia package management system</p>
+<p>First, let's ensure we are in correct directory.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span></span><span class="n">basename</span><span class="p">(</span><span class="n">pwd</span><span class="p">())</span> <span class="c"># the last part of the directory.</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>&#34;ImageProcessing&#34;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This seems correct as I am hosting this code file in <code>ImageProcessing</code> Folder. Now let's go ahead with activating the environment.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span></span><span class="k">using</span> <span class="n">Pkg</span>
+<span class="n">Pkg</span><span class="o">.</span><span class="n">activate</span><span class="p">(</span><span class="s">&quot;.&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre><span class="ansi-green-intense-fg ansi-bold">  Activating</span> new project at `~/Downloads/ImageProcessing`
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>To see currently installed packages in <code>ImageProcessing</code> environment, lets issue a command <code>installed</code></p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span></span><span class="n">Pkg</span><span class="o">.</span><span class="n">project</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>Pkg.API.ProjectInfo(nothing, nothing, nothing, false, Dict{String, Base.UUID}(), &#34;/Users/omer/Downloads/ImageProcessing/Project.toml&#34;)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>As show above, we don't have anything installed here. So let's install <code>Images</code> package</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span></span><span class="n">Pkg</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s">&quot;Images&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre><span class="ansi-green-intense-fg ansi-bold">    Updating</span> registry at `~/.julia/registries/General.toml`
+<span class="ansi-green-intense-fg ansi-bold">   Resolving</span> package versions...
+<span class="ansi-green-intense-fg ansi-bold">   Installed</span> ImageIO ────────── v0.6.5
+<span class="ansi-green-intense-fg ansi-bold">   Installed</span> ImageShow ──────── v0.3.6
+<span class="ansi-green-intense-fg ansi-bold">   Installed</span> IntervalSets ───── v0.6.2
+<span class="ansi-green-intense-fg ansi-bold">   Installed</span> ColorVectorSpace ─ v0.9.9
+<span class="ansi-green-intense-fg ansi-bold">   Installed</span> TiffImages ─────── v0.4.3
+<span class="ansi-green-intense-fg ansi-bold">   Installed</span> SpecialFunctions ─ v2.1.5
+<span class="ansi-green-intense-fg ansi-bold">   Installed</span> OffsetArrays ───── v1.12.1
+<span class="ansi-green-intense-fg ansi-bold">   Installed</span> LogExpFunctions ── v0.3.15
+<span class="ansi-green-intense-fg ansi-bold">   Installed</span> ImageMorphology ── v0.3.2
+<span class="ansi-green-intense-fg ansi-bold">   Installed</span> Compat ─────────── v4.1.0
+<span class="ansi-green-intense-fg ansi-bold">   Installed</span> LazyModules ────── v0.3.0
+<span class="ansi-green-intense-fg ansi-bold">   Installed</span> ColorTypes ─────── v0.11.3
+<span class="ansi-green-intense-fg ansi-bold">   Installed</span> ChainRulesCore ─── v1.15.0
+<span class="ansi-green-intense-fg ansi-bold">   Installed</span> Graphs ─────────── v1.5.0
+<span class="ansi-green-intense-fg ansi-bold">    Updating</span> `~/Downloads/ImageProcessing/Project.toml`
+ <span class="ansi-black-intense-fg"> [916415d5] </span><span class="ansi-green-intense-fg">+ Images v0.25.2</span>
+<span class="ansi-green-intense-fg ansi-bold">    Updating</span> `~/Downloads/ImageProcessing/Manifest.toml`
+ <span class="ansi-black-intense-fg"> [621f4979] </span><span class="ansi-green-intense-fg">+ AbstractFFTs v1.1.0</span>
+ <span class="ansi-black-intense-fg"> [79e6a3ab] </span><span class="ansi-green-intense-fg">+ Adapt v3.3.3</span>
+ <span class="ansi-black-intense-fg"> [ec485272] </span><span class="ansi-green-intense-fg">+ ArnoldiMethod v0.2.0</span>
+ <span class="ansi-black-intense-fg"> [13072b0f] </span><span class="ansi-green-intense-fg">+ AxisAlgorithms v1.0.1</span>
+ <span class="ansi-black-intense-fg"> [39de3d68] </span><span class="ansi-green-intense-fg">+ AxisArrays v0.4.5</span>
+ <span class="ansi-black-intense-fg"> [fa961155] </span><span class="ansi-green-intense-fg">+ CEnum v0.4.2</span>
+ <span class="ansi-black-intense-fg"> [49dc2e85] </span><span class="ansi-green-intense-fg">+ Calculus v0.5.1</span>
+ <span class="ansi-black-intense-fg"> [aafaddc9] </span><span class="ansi-green-intense-fg">+ CatIndices v0.2.2</span>
+ <span class="ansi-black-intense-fg"> [d360d2e6] </span><span class="ansi-green-intense-fg">+ ChainRulesCore v1.15.0</span>
+ <span class="ansi-black-intense-fg"> [9e997f8a] </span><span class="ansi-green-intense-fg">+ ChangesOfVariables v0.1.3</span>
+ <span class="ansi-black-intense-fg"> [aaaa29a8] </span><span class="ansi-green-intense-fg">+ Clustering v0.14.2</span>
+ <span class="ansi-black-intense-fg"> [3da002f7] </span><span class="ansi-green-intense-fg">+ ColorTypes v0.11.3</span>
+ <span class="ansi-black-intense-fg"> [c3611d14] </span><span class="ansi-green-intense-fg">+ ColorVectorSpace v0.9.9</span>
+ <span class="ansi-black-intense-fg"> [5ae59095] </span><span class="ansi-green-intense-fg">+ Colors v0.12.8</span>
+ <span class="ansi-black-intense-fg"> [34da2185] </span><span class="ansi-green-intense-fg">+ Compat v4.1.0</span>
+ <span class="ansi-black-intense-fg"> [ed09eef8] </span><span class="ansi-green-intense-fg">+ ComputationalResources v0.3.2</span>
+ <span class="ansi-black-intense-fg"> [150eb455] </span><span class="ansi-green-intense-fg">+ CoordinateTransformations v0.6.2</span>
+ <span class="ansi-black-intense-fg"> [dc8bdbbb] </span><span class="ansi-green-intense-fg">+ CustomUnitRanges v1.0.2</span>
+ <span class="ansi-black-intense-fg"> [9a962f9c] </span><span class="ansi-green-intense-fg">+ DataAPI v1.10.0</span>
+ <span class="ansi-black-intense-fg"> [864edb3b] </span><span class="ansi-green-intense-fg">+ DataStructures v0.17.20</span>
+ <span class="ansi-black-intense-fg"> [b4f34e82] </span><span class="ansi-green-intense-fg">+ Distances v0.10.7</span>
+ <span class="ansi-black-intense-fg"> [ffbed154] </span><span class="ansi-green-intense-fg">+ DocStringExtensions v0.8.6</span>
+ <span class="ansi-black-intense-fg"> [fa6b7ba4] </span><span class="ansi-green-intense-fg">+ DualNumbers v0.6.8</span>
+ <span class="ansi-black-intense-fg"> [4f61f5a4] </span><span class="ansi-green-intense-fg">+ FFTViews v0.3.2</span>
+ <span class="ansi-black-intense-fg"> [7a1cc6ca] </span><span class="ansi-green-intense-fg">+ FFTW v1.4.6</span>
+ <span class="ansi-black-intense-fg"> [5789e2e9] </span><span class="ansi-green-intense-fg">+ FileIO v1.14.0</span>
+ <span class="ansi-black-intense-fg"> [53c48c17] </span><span class="ansi-green-intense-fg">+ FixedPointNumbers v0.8.4</span>
+ <span class="ansi-black-intense-fg"> [a2bd30eb] </span><span class="ansi-green-intense-fg">+ Graphics v1.1.1</span>
+ <span class="ansi-black-intense-fg"> [86223c79] </span><span class="ansi-green-intense-fg">+ Graphs v1.5.0</span>
+ <span class="ansi-black-intense-fg"> [2803e5a7] </span><span class="ansi-green-intense-fg">+ ImageAxes v0.6.10</span>
+ <span class="ansi-black-intense-fg"> [c817782e] </span><span class="ansi-green-intense-fg">+ ImageBase v0.1.5</span>
+ <span class="ansi-black-intense-fg"> [f332f351] </span><span class="ansi-green-intense-fg">+ ImageContrastAdjustment v0.3.10</span>
+ <span class="ansi-black-intense-fg"> [a09fc81d] </span><span class="ansi-green-intense-fg">+ ImageCore v0.9.3</span>
+ <span class="ansi-black-intense-fg"> [51556ac3] </span><span class="ansi-green-intense-fg">+ ImageDistances v0.2.15</span>
+ <span class="ansi-black-intense-fg"> [6a3955dd] </span><span class="ansi-green-intense-fg">+ ImageFiltering v0.7.1</span>
+ <span class="ansi-black-intense-fg"> [82e4d734] </span><span class="ansi-green-intense-fg">+ ImageIO v0.6.5</span>
+ <span class="ansi-black-intense-fg"> [6218d12a] </span><span class="ansi-green-intense-fg">+ ImageMagick v1.2.1</span>
+ <span class="ansi-black-intense-fg"> [bc367c6b] </span><span class="ansi-green-intense-fg">+ ImageMetadata v0.9.8</span>
+ <span class="ansi-black-intense-fg"> [787d08f9] </span><span class="ansi-green-intense-fg">+ ImageMorphology v0.3.2</span>
+ <span class="ansi-black-intense-fg"> [2996bd0c] </span><span class="ansi-green-intense-fg">+ ImageQualityIndexes v0.3.0</span>
+ <span class="ansi-black-intense-fg"> [80713f31] </span><span class="ansi-green-intense-fg">+ ImageSegmentation v1.7.0</span>
+ <span class="ansi-black-intense-fg"> [4e3cecfd] </span><span class="ansi-green-intense-fg">+ ImageShow v0.3.6</span>
+ <span class="ansi-black-intense-fg"> [02fcd773] </span><span class="ansi-green-intense-fg">+ ImageTransformations v0.9.4</span>
+ <span class="ansi-black-intense-fg"> [916415d5] </span><span class="ansi-green-intense-fg">+ Images v0.25.2</span>
+ <span class="ansi-black-intense-fg"> [9b13fd28] </span><span class="ansi-green-intense-fg">+ IndirectArrays v1.0.0</span>
+ <span class="ansi-black-intense-fg"> [d25df0c9] </span><span class="ansi-green-intense-fg">+ Inflate v0.1.2</span>
+ <span class="ansi-black-intense-fg"> [1d092043] </span><span class="ansi-green-intense-fg">+ IntegralArrays v0.1.4</span>
+ <span class="ansi-black-intense-fg"> [a98d9a8b] </span><span class="ansi-green-intense-fg">+ Interpolations v0.13.6</span>
+ <span class="ansi-black-intense-fg"> [8197267c] </span><span class="ansi-green-intense-fg">+ IntervalSets v0.6.2</span>
+ <span class="ansi-black-intense-fg"> [3587e190] </span><span class="ansi-green-intense-fg">+ InverseFunctions v0.1.4</span>
+ <span class="ansi-black-intense-fg"> [92d709cd] </span><span class="ansi-green-intense-fg">+ IrrationalConstants v0.1.1</span>
+ <span class="ansi-black-intense-fg"> [c8e1da08] </span><span class="ansi-green-intense-fg">+ IterTools v1.4.0</span>
+ <span class="ansi-black-intense-fg"> [033835bb] </span><span class="ansi-green-intense-fg">+ JLD2 v0.4.22</span>
+ <span class="ansi-black-intense-fg"> [692b3bcd] </span><span class="ansi-green-intense-fg">+ JLLWrappers v1.4.1</span>
+ <span class="ansi-black-intense-fg"> [b835a17e] </span><span class="ansi-green-intense-fg">+ JpegTurbo v0.1.1</span>
+ <span class="ansi-black-intense-fg"> [8cdb02fc] </span><span class="ansi-green-intense-fg">+ LazyModules v0.3.0</span>
+ <span class="ansi-black-intense-fg"> [2ab3a3ac] </span><span class="ansi-green-intense-fg">+ LogExpFunctions v0.3.15</span>
+ <span class="ansi-black-intense-fg"> [1914dd2f] </span><span class="ansi-green-intense-fg">+ MacroTools v0.5.9</span>
+ <span class="ansi-black-intense-fg"> [dbb5928d] </span><span class="ansi-green-intense-fg">+ MappedArrays v0.4.1</span>
+ <span class="ansi-black-intense-fg"> [626554b9] </span><span class="ansi-green-intense-fg">+ MetaGraphs v0.7.1</span>
+ <span class="ansi-black-intense-fg"> [e1d29d7a] </span><span class="ansi-green-intense-fg">+ Missings v1.0.2</span>
+ <span class="ansi-black-intense-fg"> [e94cdb99] </span><span class="ansi-green-intense-fg">+ MosaicViews v0.3.3</span>
+ <span class="ansi-black-intense-fg"> [77ba4419] </span><span class="ansi-green-intense-fg">+ NaNMath v0.3.7</span>
+ <span class="ansi-black-intense-fg"> [b8a86587] </span><span class="ansi-green-intense-fg">+ NearestNeighbors v0.4.10</span>
+ <span class="ansi-black-intense-fg"> [f09324ee] </span><span class="ansi-green-intense-fg">+ Netpbm v1.0.2</span>
+ <span class="ansi-black-intense-fg"> [6fe1bfb0] </span><span class="ansi-green-intense-fg">+ OffsetArrays v1.12.1</span>
+ <span class="ansi-black-intense-fg"> [52e1d378] </span><span class="ansi-green-intense-fg">+ OpenEXR v0.3.2</span>
+ <span class="ansi-black-intense-fg"> [bac558e1] </span><span class="ansi-green-intense-fg">+ OrderedCollections v1.4.1</span>
+ <span class="ansi-black-intense-fg"> [f57f5aa1] </span><span class="ansi-green-intense-fg">+ PNGFiles v0.3.16</span>
+ <span class="ansi-black-intense-fg"> [5432bcbf] </span><span class="ansi-green-intense-fg">+ PaddedViews v0.5.11</span>
+ <span class="ansi-black-intense-fg"> [d96e819e] </span><span class="ansi-green-intense-fg">+ Parameters v0.12.3</span>
+ <span class="ansi-black-intense-fg"> [eebad327] </span><span class="ansi-green-intense-fg">+ PkgVersion v0.1.1</span>
+ <span class="ansi-black-intense-fg"> [21216c6a] </span><span class="ansi-green-intense-fg">+ Preferences v1.3.0</span>
+ <span class="ansi-black-intense-fg"> [92933f4c] </span><span class="ansi-green-intense-fg">+ ProgressMeter v1.7.2</span>
+ <span class="ansi-black-intense-fg"> [4b34888f] </span><span class="ansi-green-intense-fg">+ QOI v1.0.0</span>
+ <span class="ansi-black-intense-fg"> [94ee1d12] </span><span class="ansi-green-intense-fg">+ Quaternions v0.5.6</span>
+ <span class="ansi-black-intense-fg"> [b3c3ace0] </span><span class="ansi-green-intense-fg">+ RangeArrays v0.3.2</span>
+ <span class="ansi-black-intense-fg"> [c84ed2f1] </span><span class="ansi-green-intense-fg">+ Ratios v0.4.3</span>
+ <span class="ansi-black-intense-fg"> [189a3867] </span><span class="ansi-green-intense-fg">+ Reexport v1.2.2</span>
+ <span class="ansi-black-intense-fg"> [dee08c22] </span><span class="ansi-green-intense-fg">+ RegionTrees v0.3.2</span>
+ <span class="ansi-black-intense-fg"> [ae029012] </span><span class="ansi-green-intense-fg">+ Requires v1.3.0</span>
+ <span class="ansi-black-intense-fg"> [6038ab10] </span><span class="ansi-green-intense-fg">+ Rotations v1.3.1</span>
+ <span class="ansi-black-intense-fg"> [699a6c99] </span><span class="ansi-green-intense-fg">+ SimpleTraits v0.9.4</span>
+ <span class="ansi-black-intense-fg"> [47aef6b3] </span><span class="ansi-green-intense-fg">+ SimpleWeightedGraphs v1.2.1</span>
+ <span class="ansi-black-intense-fg"> [45858cf5] </span><span class="ansi-green-intense-fg">+ Sixel v0.1.2</span>
+ <span class="ansi-black-intense-fg"> [a2af1166] </span><span class="ansi-green-intense-fg">+ SortingAlgorithms v1.0.1</span>
+ <span class="ansi-black-intense-fg"> [276daf66] </span><span class="ansi-green-intense-fg">+ SpecialFunctions v2.1.5</span>
+ <span class="ansi-black-intense-fg"> [cae243ae] </span><span class="ansi-green-intense-fg">+ StackViews v0.1.1</span>
+ <span class="ansi-black-intense-fg"> [90137ffa] </span><span class="ansi-green-intense-fg">+ StaticArrays v1.4.4</span>
+ <span class="ansi-black-intense-fg"> [82ae8749] </span><span class="ansi-green-intense-fg">+ StatsAPI v1.3.0</span>
+ <span class="ansi-black-intense-fg"> [2913bbd2] </span><span class="ansi-green-intense-fg">+ StatsBase v0.33.16</span>
+ <span class="ansi-black-intense-fg"> [62fd8b95] </span><span class="ansi-green-intense-fg">+ TensorCore v0.1.1</span>
+ <span class="ansi-black-intense-fg"> [731e570b] </span><span class="ansi-green-intense-fg">+ TiffImages v0.4.3</span>
+ <span class="ansi-black-intense-fg"> [06e1c1a7] </span><span class="ansi-green-intense-fg">+ TiledIteration v0.3.1</span>
+ <span class="ansi-black-intense-fg"> [3bb67fe8] </span><span class="ansi-green-intense-fg">+ TranscodingStreams v0.9.6</span>
+ <span class="ansi-black-intense-fg"> [3a884ed6] </span><span class="ansi-green-intense-fg">+ UnPack v1.0.2</span>
+ <span class="ansi-black-intense-fg"> [efce3f68] </span><span class="ansi-green-intense-fg">+ WoodburyMatrices v0.5.5</span>
+ <span class="ansi-black-intense-fg"> [f5851436] </span><span class="ansi-green-intense-fg">+ FFTW_jll v3.3.10+0</span>
+ <span class="ansi-black-intense-fg"> [61579ee1] </span><span class="ansi-green-intense-fg">+ Ghostscript_jll v9.55.0+0</span>
+ <span class="ansi-black-intense-fg"> [c73af94c] </span><span class="ansi-green-intense-fg">+ ImageMagick_jll v6.9.12+2</span>
+ <span class="ansi-black-intense-fg"> [905a6f67] </span><span class="ansi-green-intense-fg">+ Imath_jll v3.1.2+0</span>
+ <span class="ansi-black-intense-fg"> [1d5cc7b8] </span><span class="ansi-green-intense-fg">+ IntelOpenMP_jll v2018.0.3+2</span>
+ <span class="ansi-black-intense-fg"> [aacddb02] </span><span class="ansi-green-intense-fg">+ JpegTurbo_jll v2.1.2+0</span>
+ <span class="ansi-black-intense-fg"> [88015f11] </span><span class="ansi-green-intense-fg">+ LERC_jll v3.0.0+1</span>
+ <span class="ansi-black-intense-fg"> [89763e89] </span><span class="ansi-green-intense-fg">+ Libtiff_jll v4.3.0+1</span>
+ <span class="ansi-black-intense-fg"> [856f044c] </span><span class="ansi-green-intense-fg">+ MKL_jll v2022.0.0+0</span>
+ <span class="ansi-black-intense-fg"> [18a262bb] </span><span class="ansi-green-intense-fg">+ OpenEXR_jll v3.1.1+0</span>
+ <span class="ansi-black-intense-fg"> [efe28fd5] </span><span class="ansi-green-intense-fg">+ OpenSpecFun_jll v0.5.5+0</span>
+ <span class="ansi-black-intense-fg"> [3161d3a3] </span><span class="ansi-green-intense-fg">+ Zstd_jll v1.5.2+0</span>
+ <span class="ansi-black-intense-fg"> [b53b4c65] </span><span class="ansi-green-intense-fg">+ libpng_jll v1.6.38+0</span>
+ <span class="ansi-black-intense-fg"> [075b6546] </span><span class="ansi-green-intense-fg">+ libsixel_jll v1.8.6+1</span>
+ <span class="ansi-black-intense-fg"> [0dad84c5] </span><span class="ansi-green-intense-fg">+ ArgTools</span>
+ <span class="ansi-black-intense-fg"> [56f22d72] </span><span class="ansi-green-intense-fg">+ Artifacts</span>
+ <span class="ansi-black-intense-fg"> [2a0f44e3] </span><span class="ansi-green-intense-fg">+ Base64</span>
+ <span class="ansi-black-intense-fg"> [ade2ca70] </span><span class="ansi-green-intense-fg">+ Dates</span>
+ <span class="ansi-black-intense-fg"> [8ba89e20] </span><span class="ansi-green-intense-fg">+ Distributed</span>
+ <span class="ansi-black-intense-fg"> [f43a241f] </span><span class="ansi-green-intense-fg">+ Downloads</span>
+ <span class="ansi-black-intense-fg"> [b77e0a4c] </span><span class="ansi-green-intense-fg">+ InteractiveUtils</span>
+ <span class="ansi-black-intense-fg"> [4af54fe1] </span><span class="ansi-green-intense-fg">+ LazyArtifacts</span>
+ <span class="ansi-black-intense-fg"> [b27032c2] </span><span class="ansi-green-intense-fg">+ LibCURL</span>
+ <span class="ansi-black-intense-fg"> [76f85450] </span><span class="ansi-green-intense-fg">+ LibGit2</span>
+ <span class="ansi-black-intense-fg"> [8f399da3] </span><span class="ansi-green-intense-fg">+ Libdl</span>
+ <span class="ansi-black-intense-fg"> [37e2e46d] </span><span class="ansi-green-intense-fg">+ LinearAlgebra</span>
+ <span class="ansi-black-intense-fg"> [56ddb016] </span><span class="ansi-green-intense-fg">+ Logging</span>
+ <span class="ansi-black-intense-fg"> [d6f4376e] </span><span class="ansi-green-intense-fg">+ Markdown</span>
+ <span class="ansi-black-intense-fg"> [a63ad114] </span><span class="ansi-green-intense-fg">+ Mmap</span>
+ <span class="ansi-black-intense-fg"> [ca575930] </span><span class="ansi-green-intense-fg">+ NetworkOptions</span>
+ <span class="ansi-black-intense-fg"> [44cfe95a] </span><span class="ansi-green-intense-fg">+ Pkg</span>
+ <span class="ansi-black-intense-fg"> [de0858da] </span><span class="ansi-green-intense-fg">+ Printf</span>
+ <span class="ansi-black-intense-fg"> [3fa0cd96] </span><span class="ansi-green-intense-fg">+ REPL</span>
+ <span class="ansi-black-intense-fg"> [9a3f8284] </span><span class="ansi-green-intense-fg">+ Random</span>
+ <span class="ansi-black-intense-fg"> [ea8e919c] </span><span class="ansi-green-intense-fg">+ SHA</span>
+ <span class="ansi-black-intense-fg"> [9e88b42a] </span><span class="ansi-green-intense-fg">+ Serialization</span>
+ <span class="ansi-black-intense-fg"> [1a1011a3] </span><span class="ansi-green-intense-fg">+ SharedArrays</span>
+ <span class="ansi-black-intense-fg"> [6462fe0b] </span><span class="ansi-green-intense-fg">+ Sockets</span>
+ <span class="ansi-black-intense-fg"> [2f01184e] </span><span class="ansi-green-intense-fg">+ SparseArrays</span>
+ <span class="ansi-black-intense-fg"> [10745b16] </span><span class="ansi-green-intense-fg">+ Statistics</span>
+ <span class="ansi-black-intense-fg"> [fa267f1f] </span><span class="ansi-green-intense-fg">+ TOML</span>
+ <span class="ansi-black-intense-fg"> [a4e569a6] </span><span class="ansi-green-intense-fg">+ Tar</span>
+ <span class="ansi-black-intense-fg"> [8dfed614] </span><span class="ansi-green-intense-fg">+ Test</span>
+ <span class="ansi-black-intense-fg"> [cf7118a7] </span><span class="ansi-green-intense-fg">+ UUIDs</span>
+ <span class="ansi-black-intense-fg"> [4ec0a83e] </span><span class="ansi-green-intense-fg">+ Unicode</span>
+ <span class="ansi-black-intense-fg"> [e66e0078] </span><span class="ansi-green-intense-fg">+ CompilerSupportLibraries_jll</span>
+ <span class="ansi-black-intense-fg"> [deac9b47] </span><span class="ansi-green-intense-fg">+ LibCURL_jll</span>
+ <span class="ansi-black-intense-fg"> [29816b5a] </span><span class="ansi-green-intense-fg">+ LibSSH2_jll</span>
+ <span class="ansi-black-intense-fg"> [c8ffd9c3] </span><span class="ansi-green-intense-fg">+ MbedTLS_jll</span>
+ <span class="ansi-black-intense-fg"> [14a3606d] </span><span class="ansi-green-intense-fg">+ MozillaCACerts_jll</span>
+ <span class="ansi-black-intense-fg"> [4536629a] </span><span class="ansi-green-intense-fg">+ OpenBLAS_jll</span>
+ <span class="ansi-black-intense-fg"> [05823500] </span><span class="ansi-green-intense-fg">+ OpenLibm_jll</span>
+ <span class="ansi-black-intense-fg"> [83775a58] </span><span class="ansi-green-intense-fg">+ Zlib_jll</span>
+ <span class="ansi-black-intense-fg"> [8e850b90] </span><span class="ansi-green-intense-fg">+ libblastrampoline_jll</span>
+ <span class="ansi-black-intense-fg"> [8e850ede] </span><span class="ansi-green-intense-fg">+ nghttp2_jll</span>
+ <span class="ansi-black-intense-fg"> [3f19e933] </span><span class="ansi-green-intense-fg">+ p7zip_jll</span>
+<span class="ansi-green-intense-fg ansi-bold">Precompiling</span> project...
+<span class="ansi-green-fg">  ✓ </span><span class="ansi-black-intense-fg">LazyModules</span>
+<span class="ansi-green-fg">  ✓ </span><span class="ansi-black-intense-fg">OffsetArrays</span>
+<span class="ansi-green-fg">  ✓ </span><span class="ansi-black-intense-fg">IntervalSets</span>
+<span class="ansi-green-fg">  ✓ </span><span class="ansi-black-intense-fg">Compat</span>
+<span class="ansi-green-fg">  ✓ </span><span class="ansi-black-intense-fg">PaddedViews</span>
+<span class="ansi-green-fg">  ✓ </span><span class="ansi-black-intense-fg">DataStructures</span>
+<span class="ansi-green-fg">  ✓ </span><span class="ansi-black-intense-fg">TiledIteration</span>
+<span class="ansi-green-fg">  ✓ </span><span class="ansi-black-intense-fg">CatIndices</span>
+<span class="ansi-green-fg">  ✓ </span><span class="ansi-black-intense-fg">StackViews</span>
+<span class="ansi-green-fg">  ✓ </span><span class="ansi-black-intense-fg">AxisArrays</span>
+<span class="ansi-green-fg">  ✓ </span><span class="ansi-black-intense-fg">SortingAlgorithms</span>
+<span class="ansi-green-fg">  ✓ </span><span class="ansi-black-intense-fg">MosaicViews</span>
+<span class="ansi-green-fg">  ✓ </span><span class="ansi-black-intense-fg">ChainRulesCore</span>
+<span class="ansi-green-fg">  ✓ </span><span class="ansi-black-intense-fg">ChangesOfVariables</span>
+<span class="ansi-green-fg">  ✓ </span><span class="ansi-black-intense-fg">AbstractFFTs</span>
+<span class="ansi-green-fg">  ✓ </span><span class="ansi-black-intense-fg">LogExpFunctions</span>
+<span class="ansi-green-fg">  ✓ </span><span class="ansi-black-intense-fg">Interpolations</span>
+<span class="ansi-green-fg">  ✓ </span><span class="ansi-black-intense-fg">ColorTypes</span>
+<span class="ansi-green-fg">  ✓ </span><span class="ansi-black-intense-fg">Graphs</span>
+<span class="ansi-green-fg">  ✓ </span><span class="ansi-black-intense-fg">StatsBase</span>
+<span class="ansi-green-fg">  ✓ </span><span class="ansi-black-intense-fg">FFTW</span>
+<span class="ansi-green-fg">  ✓ </span><span class="ansi-black-intense-fg">QOI</span>
+<span class="ansi-green-fg">  ✓ </span><span class="ansi-black-intense-fg">IntegralArrays</span>
+<span class="ansi-green-fg">  ✓ </span><span class="ansi-black-intense-fg">FFTViews</span>
+<span class="ansi-green-fg">  ✓ </span><span class="ansi-black-intense-fg">SimpleWeightedGraphs</span>
+<span class="ansi-green-fg">  ✓ </span><span class="ansi-black-intense-fg">MetaGraphs</span>
+<span class="ansi-green-fg">  ✓ </span><span class="ansi-black-intense-fg">SpecialFunctions</span>
+<span class="ansi-green-fg">  ✓ </span><span class="ansi-black-intense-fg">Clustering</span>
+<span class="ansi-green-fg">  ✓ </span><span class="ansi-black-intense-fg">DualNumbers</span>
+<span class="ansi-green-fg">  ✓ </span><span class="ansi-black-intense-fg">Colors</span>
+<span class="ansi-green-fg">  ✓ </span><span class="ansi-black-intense-fg">Quaternions</span>
+<span class="ansi-green-fg">  ✓ </span><span class="ansi-black-intense-fg">Graphics</span>
+<span class="ansi-green-fg">  ✓ </span><span class="ansi-black-intense-fg">ColorVectorSpace</span>
+<span class="ansi-green-fg">  ✓ </span><span class="ansi-black-intense-fg">OpenEXR</span>
+<span class="ansi-green-fg">  ✓ </span><span class="ansi-black-intense-fg">Rotations</span>
+<span class="ansi-green-fg">  ✓ </span><span class="ansi-black-intense-fg">TiffImages</span>
+<span class="ansi-green-fg">  ✓ </span><span class="ansi-black-intense-fg">ImageCore</span>
+<span class="ansi-green-fg">  ✓ </span><span class="ansi-black-intense-fg">ImageMorphology</span>
+<span class="ansi-green-fg">  ✓ </span><span class="ansi-black-intense-fg">Netpbm</span>
+<span class="ansi-green-fg">  ✓ </span><span class="ansi-black-intense-fg">ImageBase</span>
+<span class="ansi-green-fg">  ✓ </span><span class="ansi-black-intense-fg">JpegTurbo</span>
+<span class="ansi-green-fg">  ✓ </span><span class="ansi-black-intense-fg">Sixel</span>
+<span class="ansi-green-fg">  ✓ </span><span class="ansi-black-intense-fg">ImageDistances</span>
+<span class="ansi-green-fg">  ✓ </span><span class="ansi-black-intense-fg">ImageMagick</span>
+<span class="ansi-green-fg">  ✓ </span><span class="ansi-black-intense-fg">PNGFiles</span>
+<span class="ansi-green-fg">  ✓ </span><span class="ansi-black-intense-fg">ImageShow</span>
+<span class="ansi-green-fg">  ✓ </span><span class="ansi-black-intense-fg">ImageIO</span>
+<span class="ansi-green-fg">  ✓ </span><span class="ansi-black-intense-fg">ImageAxes</span>
+<span class="ansi-green-fg">  ✓ </span><span class="ansi-black-intense-fg">ImageTransformations</span>
+<span class="ansi-green-fg">  ✓ </span><span class="ansi-black-intense-fg">ImageMetadata</span>
+<span class="ansi-green-fg">  ✓ </span><span class="ansi-black-intense-fg">ImageContrastAdjustment</span>
+<span class="ansi-green-fg">  ✓ </span><span class="ansi-black-intense-fg">ImageFiltering</span>
+<span class="ansi-green-fg">  ✓ </span><span class="ansi-black-intense-fg">ImageQualityIndexes</span>
+<span class="ansi-green-fg">  ✓ </span><span class="ansi-black-intense-fg">ImageSegmentation</span>
+<span class="ansi-green-fg">  ✓ </span>Images
+  55 dependencies successfully precompiled in 46 seconds (63 already precompiled)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now let's again see which packages are installed in current environment <code>ImageProcessing</code></p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span></span><span class="n">keys</span><span class="p">(</span><span class="n">Pkg</span><span class="o">.</span><span class="n">project</span><span class="p">()</span><span class="o">.</span><span class="n">dependencies</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>KeySet for a Dict{String, Base.UUID} with 1 entry. Keys:
+  &#34;Images&#34;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Perfect!</p>
+<p>This is it for today. See you in next tutorial...</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span></span><span class="nb">VERSION</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>v&#34;1.7.2&#34;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+</div>
+
+
+
+  </div><a class="u-url" href="/prog4cm/2022/05/23/Environment-Setup.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/prog4cm/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/prog4cm/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/prog4cm/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>An easy to use blogging platform with support for Jupyter Notebooks.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/omergilani" target="_blank" title="omergilani"><svg class="svg-icon grey"><use xlink:href="/prog4cm/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/SyedOmerGilani" target="_blank" title="SyedOmerGilani"><svg class="svg-icon grey"><use xlink:href="/prog4cm/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
