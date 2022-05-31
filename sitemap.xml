@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>https://omergilani.github.io/prog4cm/markdown/2020/01/14/test-markdown-post.html</loc>
-<lastmod>2020-01-14T00:00:00-06:00</lastmod>
-</url>
-<url>
-<loc>https://omergilani.github.io/prog4cm/jupyter/2020/02/20/test.html</loc>
-<lastmod>2020-02-20T00:00:00-06:00</lastmod>
-</url>
-<url>
 <loc>https://omergilani.github.io/prog4cm/jupyter/python/opencv/image%20processing/2022/05/09/BasicImageProcessing-in-Python.html</loc>
 <lastmod>2022-05-09T00:00:00-05:00</lastmod>
 </url>
@@ -19,6 +11,13 @@
 <url>
 <loc>https://omergilani.github.io/prog4cm/jupyter/julia/reading/display/basics/2022/05/24/Image-Reading-and-Display.html</loc>
 <lastmod>2022-05-24T00:00:00-05:00</lastmod>
+</url>
+<url>
+<loc>https://omergilani.github.io/prog4cm/jupyter/julia/spatial-transformations/cropping/scaling/rotation/translation/2022/05/31/Image-Transformations.html</loc>
+<lastmod>2022-05-31T00:00:00-05:00</lastmod>
+</url>
+<url>
+<loc>https://omergilani.github.io/prog4cm/2020-01-14-test-markdown-post.html</loc>
 </url>
 <url>
 <loc>https://omergilani.github.io/prog4cm/about/</loc>
