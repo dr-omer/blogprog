@@ -148,12 +148,9 @@ window.onload = wrap_img;
   <div class="post-content e-content" itemprop="articleBody">
     <ul id="toc" class="section-nav">
 <li class="toc-entry toc-h2"><a href="#Activating-Project">Activating Project </a></li>
-<li class="toc-entry toc-h2"><a href="#Cropping-of-Image:">Cropping of Image: </a></li>
-<li class="toc-entry toc-h2"><a href="#Scaling-image">Scaling image </a>
-<ul>
-<li class="toc-entry toc-h3"><a href="#Rotation-of-image">Rotation of image </a></li>
-</ul>
-</li>
+<li class="toc-entry toc-h2"><a href="#Cropping-of-Image">Cropping of Image </a></li>
+<li class="toc-entry toc-h2"><a href="#Scaling-of-Image">Scaling of Image </a></li>
+<li class="toc-entry toc-h2"><a href="#Rotation-of-image">Rotation of image </a></li>
 <li class="toc-entry toc-h2"><a href="#Translation-of-Image">Translation of Image </a></li>
 </ul><!--
 #################################################
@@ -375,8 +372,8 @@ keys((Pkg.project()).dependencies) = ["Images", "GLMakie", "TestImages", "VideoI
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Cropping-of-Image:">
-<a class="anchor" href="#Cropping-of-Image:" aria-hidden="true"><span class="octicon octicon-link"></span></a>Cropping of Image:<a class="anchor-link" href="#Cropping-of-Image:"> </a>
+<h2 id="Cropping-of-Image">
+<a class="anchor" href="#Cropping-of-Image" aria-hidden="true"><span class="octicon octicon-link"></span></a>Cropping of Image<a class="anchor-link" href="#Cropping-of-Image"> </a>
 </h2>
 <p>Images are treated as matrices. By providing indices, we can extract or display portion of the image.</p>
 <p>Let's consider a problem of cropping the light house from above picture. To do so, we need to provide correct indices range in image coordinate system
@@ -686,8 +683,8 @@ To provide a range in rows and column we use following notation
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Scaling-image">
-<a class="anchor" href="#Scaling-image" aria-hidden="true"><span class="octicon octicon-link"></span></a>Scaling image<a class="anchor-link" href="#Scaling-image"> </a>
+<h2 id="Scaling-of-Image">
+<a class="anchor" href="#Scaling-of-Image" aria-hidden="true"><span class="octicon octicon-link"></span></a>Scaling of Image<a class="anchor-link" href="#Scaling-of-Image"> </a>
 </h2>
 <p>We can also scale/resize image easily using <code>resize()</code> function. We simply supply scale ratio value.</p>
 <ul>
@@ -892,9 +889,9 @@ To provide a range in rows and column we use following notation
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Rotation-of-image">
+<h2 id="Rotation-of-image">
 <a class="anchor" href="#Rotation-of-image" aria-hidden="true"><span class="octicon octicon-link"></span></a>Rotation of image<a class="anchor-link" href="#Rotation-of-image"> </a>
-</h3>
+</h2>
 <p>We can also rotate image</p>
 <ul>
 <li>90 $\text{\textdegree}$ anti-clockwise rotation:       $-\pi$/2</li>
